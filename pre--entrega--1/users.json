@@ -1,12 +1,8 @@
 {
-    "users": [
-        {
-            "username": "sacastrom",
-            "password": "241210"
-        },
-        {
-            "username": "dayana",
-            "password": "258741"
-        }
-    ]
+    "sacastrom": "241210",
+    "dayana": "252525",
+    "olga": "olgalu",
+    "sherman": "264525",
+    "angel": "121212",
+    "coco": "c0c0"
 }

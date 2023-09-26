@@ -8,26 +8,18 @@ def load_users():
     except FileNotFoundError:
         return {}
 
-data = {}
 
 # Function to save users to a JSON file
 def save_users(users):
-    data['users'] = []
-    for username, password in users.items():
-        data['users'].append({
-            'username': username,
-            'password': password
-        })
-
     with open("users.json", "w") as file:
-        json.dump(data, file, indent=4)
+        json.dump(users, file, indent=4)
 
 # Function to register a user
 def register_user(users):
     username = input("Enter username: ")
     password = input("Enter password: ")
     users[username] = password
-    save_users(users)
+    save_users(users)  
     print("Registration successful.")
 
 # Function to display registered users
@@ -37,7 +29,8 @@ def show_users(users):
     else:
         print("Registered users:")
         for username, password in users.items():
-            print(f"Username: {username}, Password: {password}")
+            print("Username:", username)
+            print("Password:", password)
             print("---------------")
 
 # Function for user login
