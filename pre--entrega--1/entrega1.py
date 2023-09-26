@@ -19,7 +19,7 @@ def register_user(users):
     username = input("Enter username: ")
     password = input("Enter password: ")
     users[username] = password
-    save_users(users)  
+    save_users(users)
     print("Registration successful.")
 
 # Function to display registered users
@@ -47,6 +47,7 @@ users = load_users()
 
 # Main menu
 while True:
+    print("----------MENU----------")
     print("1. Register User")
     print("2. Show Registered Users")
     print("3. Login")
