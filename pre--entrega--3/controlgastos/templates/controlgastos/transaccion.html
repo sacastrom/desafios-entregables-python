@@ -1,11 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>aqui se mostraran las transacciones</h1>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Transacciones</title>
+{% endblock title_head %}
+
+{% block header_accion %}
+transacción
+{% endblock header_accion %}
+
+{% block header_acciones %}
+transacciones
+{% endblock header_acciones %}
+
+{% block boton_accion %}
+Transacción
+{% endblock boton_accion %}
+
+{% block main %}
+aqui se mostraran las transacciones
+{% endblock main %}

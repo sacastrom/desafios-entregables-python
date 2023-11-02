@@ -1,11 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>aqui se mostraran los presupuestos por categoria de transaccion</h1>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Presupuesto</title>
+{% endblock title_head %}
+
+{% block header_accion %}
+presupuesto
+{% endblock header_accion %}
+
+{% block header_acciones %}
+presupuestos
+{% endblock header_acciones %}
+
+{% block boton_accion %}
+Presupuesto
+{% endblock boton_accion %}
+
+{% block main %}
+aqui se mostraran los presupuestos por categoria de transaccion
+{% endblock main %}

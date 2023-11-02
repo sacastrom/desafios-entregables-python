@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>aqui se mostraran las transacciones por mes</h1>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Mes</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+<p class="text-white-75 mb-5">Aquí vas a poder visualizar las transacciones por mes</p>
+{% endblock h1_header %}
+
+{% block main %}
+aqui se mostraran las transacciones por mes
+{% endblock main %}
