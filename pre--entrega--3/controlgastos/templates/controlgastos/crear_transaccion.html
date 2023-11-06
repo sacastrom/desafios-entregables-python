@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Crear Transaccion</title>
+{% endblock title_head %}
+
+
+
+
+
+
+{% block main %}
+<!--
+    <form action="" method="POST">
+        {% csrf_token %}
+        <p>
+            Descripción:
+            <input type="text" name="descripcion">
+        </p>
+        
+        <p>
+            Monto:
+            <input type="number" name="monto">
+        </p>
+        
+        <p>
+            Tipo:
+            <input type="tex" name="tipo">
+        </p>
+        {% comment %} <p>
+            Categoría:
+            <input type="tex" name="categoria">
+        </p> {% endcomment %}
+        
+        <input type="submit" value="Crear">
+    </form>
+    
+    -->
+
+    <form action="" method="POST">
+
+        {% csrf_token %}
+        {{formulario}}
+        <input type="submit" value="Crear">
+    </form>
+
+{% endblock main %}

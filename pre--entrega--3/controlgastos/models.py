@@ -3,6 +3,9 @@ from django.db import models
 # Create your models here.
 class CategoriaTransaccion(models.Model):
     nombre = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return f'{self.id} - {self.nombre}'
 
 class Transaccion(models.Model):
     descripcion = models.CharField(max_length=200)
@@ -10,6 +13,9 @@ class Transaccion(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
     tipo = models.CharField(max_length=10) #gasto o ingreso
     categoria_transaccion = models.ForeignKey(CategoriaTransaccion, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return f'{self.id} - {self.descripcion} - {self.monto} - {self.fecha} - {self.tipo} - {self.categoria_transaccion}'
     
     
 class PresupuestoTransaccion(models.Model):
