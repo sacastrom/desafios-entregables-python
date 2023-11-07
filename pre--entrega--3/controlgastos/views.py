@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from controlgastos.models import CategoriaTransaccion, Transaccion
-from controlgastos.forms import CrearTransaccionFormulario
+from controlgastos.models import CategoriaTransaccion, Transaccion, PresupuestoTransaccion
+from controlgastos.forms import CrearTransaccionFormulario, CrearCategoriaFormulario, CrearPresupuestoFormulario
 
 # Create your views here.
 
@@ -23,19 +23,7 @@ def mes(request):
     
     return render(request, 'controlgastos/mes.html', {} )
 
-def crear_transaccion(request):
-    """ print(request.POST)
-    
-    if request.method == 'POST':
-        descripcion = request.POST.get('descripcion')
-        monto = request.POST.get('monto')
-        tipo = request.POST.get('tipo')
-        categoria = CategoriaTransaccion.objects.get(nombre='Ropa')
-        
-        
-        transaccion = Transaccion(descripcion=descripcion, monto=monto, tipo=tipo, categoria_transaccion=categoria)
-        transaccion.save() """
-        
+def crear_transaccion(request):        
     if request.method == 'POST':
         formulario = CrearTransaccionFormulario(request.POST)
         if formulario.is_valid():
@@ -52,3 +40,36 @@ def crear_transaccion(request):
     else: 
         formulario = CrearTransaccionFormulario()
     return render(request, 'controlgastos/crear_transaccion.html', {'formulario': formulario})
+
+def crear_categoria(request):        
+    if request.method == 'POST':
+        formulario = CrearCategoriaFormulario(request.POST)
+        if formulario.is_valid():
+            info_limpia = formulario.cleaned_data
+            
+            nombre = info_limpia.get('nombre')
+            
+        
+        
+            categoria = CategoriaTransaccion(nombre=nombre)
+            categoria.save()
+    else: 
+        formulario = CrearCategoriaFormulario()
+    return render(request, 'controlgastos/crear_categoria.html', {'formulario': formulario})
+
+def crear_presupuesto(request):        
+    if request.method == 'POST':
+        formulario = CrearPresupuestoFormulario(request.POST)
+        if formulario.is_valid():
+            info_limpia = formulario.cleaned_data
+            
+            presupuesto = info_limpia.get('presupuesto')
+            gasto_real = info_limpia.get('gasto_real')
+            categoria = info_limpia.get('categoria')
+            
+        
+            presupuesto_transaccion = PresupuestoTransaccion(categoria_transaccion=categoria, presupuesto=presupuesto, gasto_real=gasto_real)
+            presupuesto_transaccion.save()
+    else: 
+        formulario = CrearPresupuestoFormulario()
+    return render(request, 'controlgastos/crear_presupuesto.html', {'formulario': formulario})

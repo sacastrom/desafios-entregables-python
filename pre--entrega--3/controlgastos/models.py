@@ -23,6 +23,9 @@ class PresupuestoTransaccion(models.Model):
     presupuesto = models.DecimalField(max_digits=10, decimal_places=2)
     gasto_real = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     
+    def __str__(self):
+        return f'{self.id} - {self.categoria_transaccion} - {self.presupuesto} - {self.gasto_real}'
+    
 class Mes(models.Model):
     anio = models.IntegerField()
     mes = models.IntegerField()
